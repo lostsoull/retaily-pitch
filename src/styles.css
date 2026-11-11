@@ -1,0 +1,93 @@
+@import '@fontsource-variable/archivo/wdth.css';
+@import '@fontsource/ibm-plex-mono/latin-400.css';
+@import '@fontsource/ibm-plex-mono/latin-500.css';
+@import '@fontsource/ibm-plex-mono/latin-600.css';
+@import '@fontsource/ibm-plex-sans-arabic/arabic-400.css';
+@import '@fontsource/ibm-plex-sans-arabic/arabic-500.css';
+@import '@fontsource/ibm-plex-sans-arabic/arabic-600.css';
+@import 'tailwindcss';
+
+@theme {
+  /* One cool system: ice-white canvas, deep ink, one azure brand blue, a navy
+     night stage for the title. No red. Status colors are muted and only appear
+     inside product UI. */
+  --color-paper: #f4f7fb;
+  --color-paper-2: #e7edf5;
+  --color-ink: #0b1324;
+  --color-ink-2: #3c4558;
+  --color-ink-3: #687286;
+  --color-ink-4: #a2abbb;
+  --color-line: #d6deea;
+  --color-electric: #1e6bff;
+  --color-electric-deep: #1450d9;
+  --color-electric-soft: #e3edff;
+  --color-loss: #5b6475;
+  --color-loss-soft: #e7edf5;
+  --color-go: #3a7a5a;
+  --color-go-soft: #e0ebe4;
+  --color-brake: #b88a2e;
+  --color-brake-soft: #f0e7d3;
+  /* the night stage: title and close */
+  --color-navy: #06102b;
+  --color-navy-2: #0b1f5c;
+  --color-sky: #7fb2ff;
+  --color-wa-night: #0b141a;
+  --color-wa-panel: #111b21;
+  --color-wa-in: #202c33;
+  --color-wa-out: #005c4b;
+  --color-wa-green: #25d366;
+
+  --font-display: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --font-sans: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-arabic: 'IBM Plex Sans Arabic', 'Archivo Variable', sans-serif;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    background: #111214;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    font-kerning: normal;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-electric);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* The one display voice: confident, slightly condensed, never shouting. */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 680;
+    font-stretch: 92%;
+    letter-spacing: -0.028em;
+    line-height: 0.98;
+  }
+  .lede {
+    font-family: var(--font-sans);
+    font-weight: 450;
+    font-stretch: 100%;
+    letter-spacing: -0.01em;
+    line-height: 1.32;
+    text-wrap: balance;
+  }
+  .ar {
+    font-family: var(--font-arabic);
+    direction: rtl;
+    unicode-bidi: plaintext;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
